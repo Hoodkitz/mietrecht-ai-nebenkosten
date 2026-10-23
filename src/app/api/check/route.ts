@@ -7,5 +7,5 @@ export async function POST(req: NextRequest) {
   const errors = validateInput(input);
   if (errors.length) return NextResponse.json({ errors }, { status: 400 });
   const { findings, deadlines } = runChecks(input);
-  return NextResponse.json({ preview: preview(findings), deadlines });
+  return NextResponse.json({ preview: preview(findings, input.items.reduce((a, x) => a + (x.tenantShare || 0), 0)), deadlines });
 }

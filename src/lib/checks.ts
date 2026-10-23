@@ -390,12 +390,12 @@ function monthsBetween(start: string, end: string): number {
   return Math.max(1, m);
 }
 
-export function preview(findings: Finding[]) {
+export function preview(findings: Finding[], cap?: number) {
   const real = findings.filter((x) => x.severity !== "hinweis");
   return {
     total: findings.length,
     relevant: real.length,
-    potentialEur: r2(real.reduce((s, x) => s + (x.potentialEur ?? 0), 0)),
+    potentialEur: Math.min(r2(real.reduce((s, x) => s + (x.potentialEur ?? 0), 0)), cap ?? Infinity),
     teasers: real.slice(0, 3).map((x) => ({ severity: x.severity, title: x.title })),
   };
 }
