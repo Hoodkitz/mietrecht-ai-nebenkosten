@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { CheckInput, runChecks, validateInput, widerspruchsbrief } from "@/lib/checks";
+import { runLandlordChecks } from "@/lib/landlord";
 import { getStripe } from "@/lib/stripe";
 
 export async function POST(req: NextRequest) {
@@ -13,6 +14,10 @@ export async function POST(req: NextRequest) {
     const s = await stripe.checkout.sessions.retrieve(sessionId);
     if (s.payment_status !== "paid") return NextResponse.json({ error: "Zahlung nicht abgeschlossen." }, { status: 402 });
     const tier = s.metadata?.tier;
+    if (tier === "vermieter") {
+      const l = runLandlordChecks(input);
+      return NextResponse.json({ tier, findings: l.findings, deadlines: { abrechnungsfristEnde: l.sendDeadline, einwendungsfristEnde: "" }, brief: null });
+    }
     const { findings, deadlines } = runChecks(input);
     return NextResponse.json({
       tier,

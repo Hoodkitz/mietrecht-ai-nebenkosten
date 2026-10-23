@@ -23,9 +23,10 @@ export default function Home() {
 
       <section className="mt-12">
         <h2 className="text-2xl font-bold">Preise</h2>
-        <div className="mt-4 grid sm:grid-cols-2 gap-4">
+        <div className="mt-4 grid sm:grid-cols-3 gap-4">
           {(Object.keys(TIERS) as (keyof typeof TIERS)[]).map((k) => (
             <div key={k} className="border rounded-lg p-5">
+              {k === "vermieter" && <Link href="/check?modus=vermieter" className="text-xs text-primary-700 underline">Für Vermieter</Link>}
               <h3 className="font-semibold">{TIERS[k].name}</h3>
               <p className="text-2xl font-bold mt-1">{priceLabel(TIERS[k].cents)}</p>
               <ul className="mt-3 text-sm text-gray-600 list-disc pl-5 space-y-1">

@@ -1,9 +1,14 @@
-export type Tier = "schnell" | "report";
+export type Tier = "schnell" | "report" | "vermieter";
 export const TIERS: Record<Tier, { name: string; cents: number; features: string[] }> = {
   schnell: {
     name: "Schnellcheck",
     cents: 490,
     features: ["Alle gefundenen Auffälligkeiten", "Rechtsgrundlagen je Punkt", "Fristenrechner"],
+  },
+  vermieter: {
+    name: "Vermieter-Check vor Versand",
+    cents: 1990,
+    features: ["Formale Prüfung Ihrer eigenen Abrechnung", "Fristen, Umlagefähigkeit, Verteilerschlüssel", "Hinweise zu Belegeinsicht und Zugang"],
   },
   report: {
     name: "Report + Widerspruchsbrief",

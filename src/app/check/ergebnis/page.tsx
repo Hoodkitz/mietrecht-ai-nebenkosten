@@ -26,7 +26,7 @@ function Inner() {
   return (
     <>
       <h1 className="text-2xl font-bold">Ihr Nebenkosten-Report</h1>
-      <p className="text-sm text-gray-600 mt-1">Abrechnungsfrist des Vermieters: {r.deadlines.abrechnungsfristEnde}. Ihre Einwendungsfrist: {r.deadlines.einwendungsfristEnde}. <button className="underline print:hidden" onClick={() => window.print()}>Drucken / als PDF speichern</button></p>
+      <p className="text-sm text-gray-600 mt-1">{r.tier === "vermieter" ? `Spätester Zugang beim Mieter: ${r.deadlines.abrechnungsfristEnde}.` : `Abrechnungsfrist des Vermieters: ${r.deadlines.abrechnungsfristEnde}. Ihre Einwendungsfrist: ${r.deadlines.einwendungsfristEnde}.`} <button className="underline print:hidden" onClick={() => window.print()}>Drucken / als PDF speichern</button></p>
       <ul className="mt-6 space-y-3">
         {r.findings.map((f) => (
           <li key={f.id} className="border rounded-lg p-4">

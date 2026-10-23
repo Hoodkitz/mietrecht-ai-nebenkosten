@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { CATEGORY_LABELS, KEY_LABELS, Category, Key, CostItem, CheckInput, eur } from "@/lib/checks";
 import { TIERS, priceLabel, Tier } from "@/lib/pricing";
 import { Disclaimer } from "@/components/SiteChrome";
@@ -17,7 +18,8 @@ const newItem = (): CostItem => ({
 const inp = "w-full border border-gray-300 rounded-lg px-3 py-2 text-sm";
 const lbl = "block text-sm font-medium text-gray-700 mb-1";
 
-export default function CheckPage() {
+function CheckForm() {
+  const landlord = useSearchParams().get("modus") === "vermieter";
   const [f, setF] = useState({
     periodStart: "", periodEnd: "", receivedOn: "", monthlyPrepayment: "", statedResult: "",
     tenantArea: "", totalArea: "", contractArea: "", previousYearTotal: "", vacancy: false,
@@ -45,7 +47,7 @@ export default function CheckPage() {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true); setErrors([]); setPreview(null);
-    const res = await fetch("/api/check", { method: "POST", body: JSON.stringify(build()) });
+    const res = await fetch("/api/check" + (landlord ? "?modus=vermieter" : ""), { method: "POST", body: JSON.stringify(build()) });
     const data = await res.json();
     setBusy(false);
     if (!res.ok) return setErrors(data.errors ?? ["Fehler bei der Prüfung."]);
@@ -64,14 +66,14 @@ export default function CheckPage() {
 
   return (
     <main className="max-w-3xl mx-auto px-4 pt-8">
-      <h1 className="text-2xl font-bold">Nebenkostenabrechnung prüfen</h1>
+      <h1 className="text-2xl font-bold">{landlord ? "Eigene Abrechnung vor Versand prüfen" : "Nebenkostenabrechnung prüfen"}</h1>
       <p className="text-sm text-gray-600 mt-1">Alle Angaben finden Sie in Ihrer Abrechnung und im Mietvertrag. Eingaben werden nicht gespeichert.</p>
 
       <form onSubmit={submit} className="mt-6 space-y-6">
         <fieldset className="grid sm:grid-cols-3 gap-4">
           <div><label className={lbl}>Zeitraum von</label><input required type="date" className={inp} value={f.periodStart} onChange={set("periodStart")} /></div>
           <div><label className={lbl}>Zeitraum bis</label><input required type="date" className={inp} value={f.periodEnd} onChange={set("periodEnd")} /></div>
-          <div><label className={lbl}>Abrechnung zugegangen am</label><input required type="date" className={inp} value={f.receivedOn} onChange={set("receivedOn")} /></div>
+          <div><label className={lbl}>{landlord ? "Geplantes Versanddatum" : "Abrechnung zugegangen am"}</label><input required type="date" className={inp} value={f.receivedOn} onChange={set("receivedOn")} /></div>
           <div><label className={lbl}>Ihre Wohnfläche (m²)</label><input required inputMode="decimal" className={inp} value={f.tenantArea} onChange={set("tenantArea")} /></div>
           <div><label className={lbl}>Gesamtfläche Haus (m²)</label><input required inputMode="decimal" className={inp} value={f.totalArea} onChange={set("totalArea")} /></div>
           <div><label className={lbl}>Fläche laut Mietvertrag (optional)</label><input inputMode="decimal" className={inp} value={f.contractArea} onChange={set("contractArea")} /></div>
@@ -120,7 +122,7 @@ export default function CheckPage() {
           <label className="flex items-start gap-2 text-sm mt-4"><input type="checkbox" className="mt-1" checked={waiver} onChange={(e) => setWaiver(e.target.checked)} />
             <span>Ich stimme ausdrücklich zu, dass die digitale Leistung sofort beginnt, und weiß, dass mein Widerrufsrecht damit erlischt (siehe <a className="underline" href="/agb">AGB und Widerruf</a>).</span></label>
           <div className="mt-4 grid sm:grid-cols-2 gap-3">
-            {(Object.keys(TIERS) as Tier[]).map((t) => (
+            {(Object.keys(TIERS) as Tier[]).filter((t) => (t === "vermieter") === landlord).map((t) => (
               <button key={t} disabled={!waiver || busy} onClick={() => pay(t)} className="border rounded-lg p-4 text-left hover:border-primary-600 disabled:opacity-50">
                 <span className="font-semibold">{TIERS[t].name}</span><br /><span className="text-xl font-bold">{priceLabel(TIERS[t].cents)}</span>
               </button>
@@ -131,5 +133,13 @@ export default function CheckPage() {
       )}
       <div className="mt-8"><Disclaimer /></div>
     </main>
+  );
+}
+
+export default function CheckPage() {
+  return (
+    <Suspense fallback={null}>
+      <CheckForm />
+    </Suspense>
   );
 }

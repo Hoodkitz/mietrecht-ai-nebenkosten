@@ -390,12 +390,31 @@ function monthsBetween(start: string, end: string): number {
   return Math.max(1, m);
 }
 
+const ITEM_PREFIXES = ["nicht-umlagefaehig-", "vertrag-", "heiz-verbrauch-", "heiz-quote-", "anteil-", "rechnung-", "unklar-"];
+
+// Potenzial ohne Doppelzaehlung: je Position zaehlt nur der groesste Einzelfund; eine verspaetete
+// Abrechnung (Nachforderung entfaellt komplett) deckt alle uebrigen Funde ab. Obergrenze optional.
+export function potentialTotal(findings: Finding[], cap?: number): number {
+  const late = findings.find((x) => x.id === "frist-abrechnung" && x.potentialEur);
+  const groups = new Map<string, number>();
+  for (const x of findings) {
+    if (x.severity === "hinweis" || !x.potentialEur) continue;
+    const pre = ITEM_PREFIXES.find((p) => x.id.startsWith(p));
+    const key = pre ? "item-" + x.id.slice(pre.length) : x.id;
+    groups.set(key, Math.max(groups.get(key) ?? 0, x.potentialEur));
+  }
+  let sum = 0;
+  groups.forEach((v) => (sum += v));
+  if (late) sum = late.potentialEur!;
+  return r2(Math.min(sum, cap ?? Infinity));
+}
+
 export function preview(findings: Finding[], cap?: number) {
   const real = findings.filter((x) => x.severity !== "hinweis");
   return {
     total: findings.length,
     relevant: real.length,
-    potentialEur: Math.min(r2(real.reduce((s, x) => s + (x.potentialEur ?? 0), 0)), cap ?? Infinity),
+    potentialEur: potentialTotal(findings, cap),
     teasers: real.slice(0, 3).map((x) => ({ severity: x.severity, title: x.title })),
   };
 }
