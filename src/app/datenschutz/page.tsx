@@ -14,7 +14,7 @@ export default function Page() {
       <h2 className="font-semibold">3. Zahlungsabwicklung</h2>
       <p>Zahlungen werden über Stripe abgewickelt (Stripe Payments Europe, Ltd., Irland). Zahlungsdaten gelangen nicht auf unsere Server. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Weitere Informationen: Datenschutzerklärung von Stripe.</p>
       <h2 className="font-semibold">4. Hosting und Server-Logs</h2>
-      <p>Hosting-Anbieter: <Placeholder>Anbieter, Standort, AV-Vertrag</Placeholder>. Beim Aufruf werden technisch notwendige Logdaten (IP-Adresse, Zeitpunkt) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Speicherdauer: <Placeholder>z. B. 7 Tage</Placeholder>.</p>
+      <p>Hosting-Anbieter: Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA (Auftragsverarbeitung auf Grundlage eines Data Processing Addendum inkl. EU-Standardvertragsklauseln). Beim Aufruf werden technisch notwendige Logdaten (IP-Adresse, Zeitpunkt) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Speicherdauer: <Placeholder>z. B. 7 Tage</Placeholder>.</p>
       <h2 className="font-semibold">5. Cookies und Tracking</h2>
       <p>Wir setzen derzeit keine Tracking- oder Marketing-Cookies ein. <Placeholder>Anpassen, falls Analyse-Tools ergänzt werden</Placeholder></p>
       <h2 className="font-semibold">6. Ihre Rechte</h2>

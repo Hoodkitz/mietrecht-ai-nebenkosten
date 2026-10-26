@@ -16,7 +16,7 @@ export default function Page() {
       <h2 className="font-semibold">Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h2>
       <p>Julien Paarmann, Klausing 19, 13627 Berlin</p>
       <h2 className="font-semibold">Verbraucherstreitbeilegung</h2>
-      <p>Wir sind <Placeholder>bereit / nicht bereit</Placeholder> und nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <p>Wir sind nicht bereit und nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
     </main>
   );
 }
