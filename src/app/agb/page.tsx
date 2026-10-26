@@ -13,7 +13,7 @@ export default function Page() {
       <p>Es gelten die zum Bestellzeitpunkt angezeigten Preise in Euro <Placeholder>inkl. / zzgl. USt. bzw. Kleinunternehmerhinweis</Placeholder>. Die Zahlung erfolgt über Stripe.</p>
       <h2 className="font-semibold">3. Widerrufsrecht bei digitalen Inhalten</h2>
       <p>Verbraucher haben grundsätzlich ein 14-tägiges Widerrufsrecht. Das Widerrufsrecht erlischt bei digitalen Inhalten, wenn wir mit der Ausführung begonnen haben, nachdem Sie ausdrücklich zugestimmt haben, dass wir vor Ablauf der Widerrufsfrist beginnen, und Ihre Kenntnis bestätigt haben, dass Sie dadurch Ihr Widerrufsrecht verlieren (§ 356 Abs. 5 BGB). Diese Zustimmung holen wir vor der Zahlung per Kontrollkästchen ein.</p>
-      <p>Widerrufsadresse: Julien Paarmann, Klausing 19, 13627 Berlin, E-Mail: <Placeholder>E-Mail-Adresse</Placeholder></p>
+      <p>Widerrufsadresse: Julien Paarmann, Klausing 19, 13627 Berlin, E-Mail: julienpaarmann@web.de</p>
       <h2 className="font-semibold">4. Haftung</h2>
       <p><Placeholder>Haftungsklausel, rechtlich prüfen lassen</Placeholder></p>
     </main>

@@ -10,7 +10,7 @@ export default function Page() {
       <h2 className="font-semibold">Angaben gemäß § 5 DDG</h2>
       <p>Julien Paarmann<br />Klausing 19<br />13627 Berlin</p>
       <h2 className="font-semibold">Kontakt</h2>
-      <p>E-Mail: <Placeholder>E-Mail-Adresse</Placeholder><br />Telefon: <Placeholder>Telefonnummer, falls vorhanden</Placeholder></p>
+      <p>E-Mail: julienpaarmann@web.de<br />Telefon: <Placeholder>Telefonnummer, falls vorhanden</Placeholder></p>
       <h2 className="font-semibold">Umsatzsteuer-ID</h2>
       <p><Placeholder>USt-IdNr. nach § 27a UStG oder Hinweis auf Kleinunternehmerregelung § 19 UStG</Placeholder></p>
       <h2 className="font-semibold">Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h2>
