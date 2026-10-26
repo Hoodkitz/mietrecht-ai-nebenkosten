@@ -8,7 +8,7 @@ export default function Page() {
       <h1 className="text-2xl font-bold">Datenschutzerklärung</h1>
       <p className="bg-yellow-50 border border-yellow-300 rounded p-3 text-sm">Entwurf: Muss vor Livegang vom Betreiber geprüft und ergänzt werden (ggf. rechtliche Prüfung). Platzhalter sind markiert.</p>
       <h2 className="font-semibold">1. Verantwortlicher</h2>
-      <p><Placeholder>Name, Anschrift, E-Mail wie im Impressum</Placeholder></p>
+      <p>Julien Paarmann, Klausing 19, 13627 Berlin, E-Mail: <Placeholder>E-Mail-Adresse</Placeholder></p>
       <h2 className="font-semibold">2. Eingaben im Nebenkosten-Check</h2>
       <p>Die Angaben, die Sie im Formular machen (Zeiträume, Flächen, Kostenpositionen), werden zur Berechnung des Ergebnisses an unseren Server übermittelt und ausschließlich im Arbeitsspeicher verarbeitet. Sie werden nicht in einer Datenbank gespeichert. Für den Report halten wir die Eingaben nur in Ihrem Browser (Session Storage) vor. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
       <h2 className="font-semibold">3. Zahlungsabwicklung</h2>
