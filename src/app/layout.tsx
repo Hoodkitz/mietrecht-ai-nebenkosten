@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Header, Footer } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
-  title: "Mietrecht AI Nebenkosten – Nebenkostenabrechnung einfach gemacht",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
+  title: { default: "Nebenkostenabrechnung prüfen: Fehler und Fristen finden", template: "%s | Nebenkosten-Check" },
   description:
-    "Automatisierte Nebenkostenabrechnung, Heizkosten-VKO, Umlage, Rechnungen und Konten. Ab 29€/Monat.",
+    "Prüfen Sie Ihre Nebenkostenabrechnung auf häufige Fehler, nicht umlagefähige Kosten und Fristen. Kostenlose Vorschau, Report ab 4,90 EUR.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
