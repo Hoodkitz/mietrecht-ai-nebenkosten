@@ -166,6 +166,74 @@ export const GUIDES: Guide[] = [
       { q: "Was, wenn ich die Nachzahlung nicht aufbringen kann?", a: "Sprechen Sie frühzeitig mit dem Vermieter und suchen Sie Beratung beim Mieterverein oder der Verbraucherzentrale." },
     ],
   },
+  {
+    slug: "betriebskostenabrechnung-pruefen",
+    title: "Betriebskostenabrechnung prüfen: Unterschied zu Nebenkosten & Leitfaden",
+    h1: "Betriebskostenabrechnung prüfen: Gesetzliche Vorgaben & Leitfaden",
+    description: "Betriebskostenabrechnung oder Nebenkostenabrechnung? Gesetzliche Regeln nach § 556 BGB und BetrKV, Prüffristen und typische Fehlerquellen.",
+    intro: "Im Mietrecht heißen Nebenkosten offiziell Betriebskosten (§ 556 BGB). Für eine wirksame Betriebskostenabrechnung gelten strenge gesetzliche Mindestanforderungen.",
+    sections: [
+      { h2: "1. Begriff: Nebenkosten vs. Betriebskosten (§ 556 BGB)", p: ["Umgangssprachlich wird meist von Nebenkosten gesprochen. Rechtlich umfasst der Begriff Nebenkosten alle anfallenden Kosten, während Betriebskosten nur die laufenden Lasten nach § 1 BetrKV bezeichnen. Nur diese dürfen auf den Wohnraummieter umgelegt werden, sofern dies im Mietvertrag ausdrücklich vereinbart ist."] },
+      { h2: "2. Formelle Mindestanforderungen des BGH", p: ["Nach ständiger BGH-Rechtsprechung muss jede Abrechnung vier Mindestangaben enthalten: Zusammenstellung der Gesamtkosten, Angabe und Erläuterung des Umlageschlüssels, Berechnung des Mieteranteils und Abzug der Vorauszahlungen. Fehlt eine Angabe, ist die Abrechnung formell unwirksam."] },
+      { h2: "3. Umlagefähige Kosten nach § 2 BetrKV", p: ["Die Betriebskostenverordnung nennt in § 2 genau 17 Positionen. Verwaltungskosten, Reparaturen, Instandhaltungsrücklagen oder Bankgebühren dürfen niemals auf den Mieter umgelegt werden."] },
+      { h2: "4. Ausschlussfrist nach 12 Monaten (§ 556 Abs. 3 BGB)", p: ["Der Vermieter muss spätestens 12 Monate nach Ende des Abrechnungszeitraums abrechnen (bei Kalenderjahr 2024 bis 31.12.2025). Nach Fristablauf sind Nachforderungen gesetzlich ausgeschlossen."] },
+    ],
+    faq: [
+      { q: "Ist Betriebskostenabrechnung dasselbe wie Nebenkostenabrechnung?", a: "Im Alltag ja. Rechtlich sind Betriebskosten der gesetzlich definierte Teil der Nebenkosten, der nach der Betriebskostenverordnung umlagefähig ist." },
+      { q: "Was passiert, wenn die formellen Mindestangaben fehlen?", a: "Eine formell fehlerhafte Abrechnung setzt keine Zahlungsfrist in Gang. Die Nachforderung muss vorerst nicht gezahlt werden." },
+    ],
+  },
+  {
+    slug: "co2-kosten-nebenkostenabrechnung",
+    title: "CO2-Kosten Nebenkostenabrechnung: Stufenmodell & Vermieteranteil prüfen",
+    h1: "CO2-Kosten in der Nebenkostenabrechnung: Wer zahlt wie viel?",
+    description: "CO2-Kostenaufteilung nach dem CO2KostAufG: Zehn-Stufen-Modell, Pflichtangaben in der Heizkostenabrechnung und Kürzungsrecht für Mieter.",
+    intro: "Seit 2023 dürfen Vermieter die CO2-Kosten für Heizung und Warmwasser nicht mehr komplett auf Mieter abwälzen. Das CO2KostAufG verpflichtet Vermieter zur Kostenbeteiligung.",
+    sections: [
+      { h2: "1. Das 10-Stufen-Modell nach dem CO2KostAufG", p: ["Je schlechter die Energieeffizienz des Gebäudes, desto höher ist der gesetzliche Vermieteranteil an den CO2-Kosten (von 0 % bei Top-Effizienz bis zu 95 % bei sehr hohem CO2-Ausstoß pro m²)."] },
+      { h2: "2. Pflichtangaben in der Heizkostenabrechnung", p: ["Die Abrechnung muss den spezifischen CO2-Ausstoß (kg CO2/m²), die Einstufung in das Stufenmodell, den prozentualen Vermieter- und Mieteranteil sowie den Erstattungsbetrag transparent ausweisen."] },
+      { h2: "3. Kürzungsrecht für Mieter (§ 12 CO2KostAufG)", p: ["Fehlt die Ausweisung der CO2-Kosten oder weigert sich der Vermieter, den gesetzlichen Anteil abzuziehen, dürfen Mieter den auf sie entfallenden Heizkostenanteil um 5 Prozent kürzen."] },
+      { h2: "4. Sonderfall: Gasetagenheizung", p: ["Bei eigenen Gas- oder Fernwärmeverträgen müssen Mieter den Vermieteranteil aktiv einfordern – innerhalb von 12 Monaten nach Erhalt der Lieferantenrechnung."] },
+    ],
+    faq: [
+      { q: "Muss sich mein Vermieter an den CO2-Kosten beteiligen?", a: "Ja, bei zentral beheizten Wohngebäuden ist die Aufteilung nach dem CO2KostAufG zwingend vorgeschrieben." },
+      { q: "Wie viel darf ich kürzen, wenn die CO2-Berechnung fehlt?", a: "Nach § 12 CO2KostAufG dürfen Mieter ihren Anteil an den Heizkosten um 5 Prozent kürzen." },
+    ],
+  },
+  {
+    slug: "grundsteuer-nebenkostenabrechnung",
+    title: "Grundsteuer in der Nebenkostenabrechnung: Was Mieter prüfen müssen",
+    h1: "Grundsteuer in den Nebenkosten: Umlagefähigkeit & Reform",
+    description: "Darf der Vermieter die Grundsteuer umlegen? Voraussetzungen nach § 2 Nr. 1 BetrKV, Umlageschlüssel und Auswirkungen der Grundsteuerreform.",
+    intro: "Die Grundsteuer ist nach § 2 Nr. 1 BetrKV grundsätzlich umlagefähig. Dennoch kommt es bei der Abrechnung häufig zu Fehlern – etwa bei Gewerbeeinheiten oder falschen Schlüsseln.",
+    sections: [
+      { h2: "1. Umlagefähigkeit der Grundsteuer B", p: ["Die laufende Grundsteuer für bebaute Grundstücke darf umgelegt werden, wenn im Mietvertrag vereinbart ist, dass der Mieter die Betriebskosten trägt. Einmalige Abgaben oder Erschließungskosten sind nicht umlagefähig."] },
+      { h2: "2. Vorwegabzug bei Gewerbeanteilen", p: ["Gibt es im Gebäude Gewerbeflächen (z. B. Büros oder Geschäfte), ist die Grundsteuer dafür oft überproportional hoch. Der Vermieter muss einen Vorwegabzug vornehmen, damit Mieter nicht benachteiligt werden."] },
+      { h2: "3. Die Grundsteuerreform ab 2025", p: ["Durch die Reform gelten neue Hebesätze und Messbeträge. Mieter können verlangen, den aktuellen amtlichen Grundsteuerbescheid der Gemeinde einzusehen, um die abgerechneten Zahlen zu überprüfen."] },
+      { h2: "4. Richtiger Verteilerschlüssel", p: ["Sofern nicht anders vereinbart, ist die Grundsteuer nach Wohnfläche umzulegen (§ 556a Abs. 1 BGB). Personenschlüssel oder reine Wohneinheitenschlüssel sind unüblich."] },
+    ],
+    faq: [
+      { q: "Muss die Grundsteuer im Mietvertrag erwähnt sein?", a: "Ja, die Umlage der Betriebskosten muss im Mietvertrag wirksam vereinbart sein." },
+      { q: "Darf ich den amtlichen Grundsteuerbescheid einsehen?", a: "Ja, im Rahmen Ihres gesetzlichen Rechts auf Belegeinsicht (§ 259 BGB)." },
+    ],
+  },
+  {
+    slug: "nebenkostenabrechnung-vermieter-pruefen",
+    title: "Nebenkostenabrechnung als Vermieter prüfen: Formfehler & Fristen vermeiden",
+    h1: "Nebenkostenabrechnung als Vermieter vor dem Versand prüfen",
+    description: "Private Vermieter riskieren bei Formfehlern oder Fristversäumnis (§ 556 Abs. 3 BGB) den Verlust ihrer Nachforderungen. Checkliste vor dem Versand.",
+    intro: "Als privater Vermieter tragen Sie das volle Fristen- und Formrisiko: Formfehler machen eine Abrechnung angreifbar, und nach Ablauf von 12 Monaten können Nachforderungen dauerhaft verfallen.",
+    sections: [
+      { h2: "1. Die 12-Monats-Ausschlussfrist (§ 556 Abs. 3 BGB)", p: ["Die Abrechnung muss dem Mieter spätestens bis zum Ablauf des 12. Monats nach Ende der Abrechnungsperiode nachweisbar zugehen (bei Kalenderjahr 2024 bis 31.12.2025). Danach sind Nachforderungen gesetzlich ausgeschlossen."] },
+      { h2: "2. Formelle Mindestangaben nach BGH-Standard", p: ["Vier Pflichtangaben sind unverzichtbar: Gesamtkostenaufstellung, Angabe und Erläuterung der Umlageschlüssel, Berechnung des konkreten Mieteranteils und Abzug der tatsächlich gezahlten Vorauszahlungen."] },
+      { h2: "3. Ausschluss nicht umlagefähiger Kosten (§ 1 BetrKV)", p: ["Reparaturen, Instandhaltungsrücklagen, Verwaltungskosten, Bankspesen und Leerstandskosten dürfen unter keinen Umständen auf Mieter umgelegt werden. Diese müssen vorab herausgerechnet werden."] },
+      { h2: "4. Heizkostenverordnung & Vorwegabzüge beachten", p: ["Heizkosten müssen zu 50–70 % verbrauchsabhängig verteilt werden (§ 7 HeizkostenV). Fehlt die Verbrauchserfassung, darf der Mieter um 15 % kürzen (§ 12 HeizkostenV). Bei Gewerbeeinheiten im Haus ist ein Vorwegabzug erforderlich."] },
+    ],
+    faq: [
+      { q: "Kann ich als Vermieter eine falsche Abrechnung korrigieren?", a: "Innerhalb der 12-monatigen Abrechnungsfrist ja. Nach Ablauf der Frist ist eine Korrektur zuungunsten des Mieters ausgeschlossen." },
+      { q: "Wie kann ich mich vor dem Versand absichern?", a: "Nutzen Sie unseren Vermieter-Check (19,90 EUR Einmalzahlung) für eine automatisierte Vorprüfung aller Fristen, Formeln und Umlagekriterien vor dem Versand." },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => GUIDES.find((g) => g.slug === slug);
